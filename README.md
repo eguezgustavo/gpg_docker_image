@@ -4,16 +4,16 @@
 
 Build the docker images and create local directories
 ```
-docker build -t gpg .
+docker build -t eguezgustavo/gpg . or docker pull eguezgustavo/gpg
 mkdir -p ~/.gnupg
 ```
 
 Add alias to your shell profile
 ```
-alias import_key="docker run --rm -v $HOME/.gnupg:/home/gpg_user/.gnupg gpg import $@"
-alias print_key="docker run --rm -v $HOME/.gnupg:/home/gpg_user/.gnupg gpg print_public_key $@"
-alias encrypt="docker run --rm -v $HOME/.gnupg:/home/gpg_user/.gnupg gpg encrypt $@"
-alias decrypt="docker run --rm -v $HOME/.gnupg:/home/gpg_user/.gnupg gpg decrypt $@"
+alias import_key="docker run --rm -v $HOME/.gnupg:/home/gpg_user/.gnupg eguezgustavo/gpg import $@"
+alias print_key="docker run --rm -v $HOME/.gnupg:/home/gpg_user/.gnupg eguezgustavo/gpg print_public_key $@"
+alias encrypt="docker run --rm -v $HOME/.gnupg:/home/gpg_user/.gnupg eguezgustavo/gpg encrypt $@"
+alias decrypt="docker run --rm -v $HOME/.gnupg:/home/gpg_user/.gnupg eguezgustavo/gpg decrypt $@"
 ```
 
 ## Usage
