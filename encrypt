@@ -1,0 +1,9 @@
+#!/bin/bash
+
+ENCRYPTED_TEXT=$(echo $1 | gpg -e --trust-model always -r $2 | base64 -w 0)
+
+echo "Encrypted text"
+echo "=============="
+echo
+echo $ENCRYPTED_TEXT
+echo "=============="
